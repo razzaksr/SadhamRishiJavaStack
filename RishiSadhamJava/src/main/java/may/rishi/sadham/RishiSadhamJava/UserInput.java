@@ -16,7 +16,7 @@ public class UserInput
 		System.out.println("Tell us price of the product ");
 		price=scanObj.nextDouble();
 		System.out.println("Tell us quantity ");
-		quantity=scanObj.nextShort();
+		quantity=scanObj.nextShort();// 78
 		
 		
 		System.out.println("Thanks for ordering "+productName+" of quantity's "+quantity+" for the price of "+price+" in the mode "+mode);
