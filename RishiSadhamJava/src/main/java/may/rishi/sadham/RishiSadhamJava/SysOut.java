@@ -43,7 +43,7 @@ public class SysOut
 }
 
 class Delta
-{
+{		
 	int cosmo;
 	static double hey;
 	static Alpha ap=new Alpha();
