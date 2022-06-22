@@ -1,5 +1,7 @@
 package may.rishi.sadham.RishiSadhamJava;
 
+import java.util.Scanner;
+
 /*
  Perfect square
  
@@ -39,7 +41,30 @@ package may.rishi.sadham.RishiSadhamJava;
    ###
     ##
      #
+     
+Pascal triangle:
+     #
+    # #
+   # # #
+  # # # #
+ # # # # #
  
+ # # # # #
+  # # # #
+   # # #
+    # #
+     #
+pyramid:
+     #
+    ###
+   #####
+  #######
+  
+  #######
+   #####
+    ###
+     #
+  
  */
 
 public class Patterns {
@@ -61,15 +86,56 @@ public class Patterns {
 //		}
 		
 		
-		for(int row=1;row<=5;row++) {
+//		for(int row=1;row<=5;row++) {
+//			// 4,3,2,1 ; 4,3,2; 4,3; 4
+//			for(int space=4;space>=row;space--) {
+//				System.out.print(" ");
+//			}
+//			for(int col=1;col<=row;col++) {
+//				System.out.print("#");
+//			}
+//			System.out.println();
+//		}
+		
+		Scanner myRead=new Scanner(System.in);
+		System.out.println("Tell us limit of the pattern ");
+		int myLimit=myRead.nextInt();
+		
+//		for(int row=1;row<=myLimit;row++) {
+//			// 4,3,2,1 ; 4,3,2; 4,3; 4
+//			for(int space=myLimit-1;space>=row;space--) {
+//				System.out.print(" ");
+//			}
+//			for(int col=1;col<=row;col++) {
+//				System.out.print("#");
+//			}
+//			System.out.println();
+//		}
+		
+//		for(int row=1;row<=myLimit;row++) {
+//			// 4,3,2,1 ; 4,3,2; 4,3; 4
+//			for(int space=myLimit-1;space>=row;space--) {
+//				System.out.print(" ");
+//			}
+//			for(int col=1;col<=row;col++) {
+//				System.out.print("# ");
+//			}
+//			System.out.println();
+//		}
+		
+		int decide=1;
+		for(int row=1;row<=myLimit;row++) {
 			// 4,3,2,1 ; 4,3,2; 4,3; 4
-			for(int space=4;space>=row;space--) {
+			for(int space=myLimit-1;space>=row;space--) {
 				System.out.print(" ");
 			}
-			for(int col=1;col<=row;col++) {
+			for(int col=1;col<=decide;col++) {
 				System.out.print("#");
 			}
 			System.out.println();
+			decide+=2;
 		}
+		
+		myRead.close();
 	}
 }
