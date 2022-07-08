@@ -12,6 +12,8 @@ import java.util.Arrays;
 
 public class Search {
 	
+	
+	// O(n)
 	public int linearRecursion(String[] arr,String data,int current) {
 		if(current<arr.length) {
 			// compareTo 
@@ -24,6 +26,7 @@ public class Search {
 		return -1;
 	}
 	
+	// O(n)
 	public int linearLoop(String[] arr,String data) {
 		for(int index=0;index<arr.length;index++) {
 			if(arr[index].compareToIgnoreCase(data)==0)
@@ -32,6 +35,8 @@ public class Search {
 		return -1;
 	}
 	
+	
+	// O(logn)
 	public int binary(String[] arr,String data,int start,int end) {
 		if(end>=start) {
 			int mid=start+(end-start)/2;
