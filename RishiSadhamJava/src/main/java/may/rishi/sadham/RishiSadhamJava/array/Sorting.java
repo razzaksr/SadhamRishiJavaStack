@@ -4,6 +4,44 @@ import java.util.Arrays;
 
 public class Sorting {
 	
+	// On(logn)
+	public void order(float[] arr) {
+		
+		// structure formation
+		for(int init=arr.length/2-1;init>=0;init--) {
+			heaping(arr, arr.length, init);
+		}
+		
+		// swap between 0th index and maximum
+		for(int pos=arr.length-1;pos>0;pos--) {
+			float tmp=arr[0];
+			arr[0]=arr[pos];
+			arr[pos]=tmp;
+			
+			heaping(arr, pos, 0);
+		}
+	}
+	
+	public void heaping(float[] arr,int limit,int parent) {
+		int biggest=parent;
+		
+		int lPos=2*parent+1;
+		int rPos=2*parent+2;
+		
+		if(lPos<limit&&arr[lPos]>arr[biggest])
+			biggest=lPos;
+		if(rPos<limit&&arr[rPos]>arr[biggest])
+			biggest=rPos;
+		
+		if(parent!=biggest) {
+			float tmp=arr[parent];
+			arr[parent]=arr[biggest];
+			arr[biggest]=tmp;
+			
+			heaping(arr, limit, biggest);
+		}
+	}
+	
 	// time complexity		: 		O(n2)
 	public void selection(float[] arr) {
 		for(int select=0;select<arr.length;select++) {
@@ -35,7 +73,9 @@ public class Sorting {
 		System.out.println(Arrays.toString(geek));
 		
 		//st.selection(geek);
-		st.bubble(geek);
+		//st.bubble(geek);
+		
+		st.order(geek);
 		
 		System.out.println(Arrays.toString(geek));
 	}
