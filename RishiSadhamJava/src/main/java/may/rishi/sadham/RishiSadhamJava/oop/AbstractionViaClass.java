@@ -6,6 +6,7 @@ public class AbstractionViaClass extends Reed{
 	public static void main(String[] args) {
 		AbstractionViaClass obj=new AbstractionViaClass();
 		obj.view();
+		obj.readRow(2);
 	}
 
 	@Override
@@ -15,7 +16,7 @@ public class AbstractionViaClass extends Reed{
 			System.out.println(Arrays.toString(arr[row]));
 		}
 		else {
-			
+			System.out.println(row+" is extending the boundry");
 		}
 	}
 }
